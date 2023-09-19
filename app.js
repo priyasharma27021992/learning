@@ -1,5 +1,5 @@
-import React from 'react';
-import {createRoot} from 'react-dom/client';
+import React from "react";
+import { createRoot } from "react-dom/client";
 
 /**
  * <div id="parent">
@@ -14,6 +14,7 @@ import {createRoot} from 'react-dom/client';
  * </div>
  */
 
+/*
 const parent = React.createElement('div', 
     {id: "parent"}, 
     [
@@ -32,6 +33,38 @@ const parent = React.createElement('div',
         ]
     )
 ]);
-const heading = <h1>Hey I am React!</h1>;
-const root = createRoot(document.getElementById('root'));
-root.render(heading);
+*/
+
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="restaurant-container"></div>
+    </div>
+  );
+};
+
+const Header = () => {
+  return (
+    <div>
+      <div>Logo</div>
+      <div>
+        <div>Home</div>
+        <div>About</div>
+        <div>Contact</div>
+        <div>Cart</div>
+      </div>
+    </div>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+const root = createRoot(document.getElementById("root"));
+root.render(<AppLayout />);

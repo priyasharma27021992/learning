@@ -1,3 +1,7 @@
 #heading{
     color: aqua;
 }
+
+.app{
+    display: flex;
+}
