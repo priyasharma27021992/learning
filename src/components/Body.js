@@ -6,16 +6,18 @@ export default Body = () => {
   const [topRestaurantList, setTopRestaurantList] = useState(resData);
   return (
     <div className="body">
-      <div
-        className="search"
-        onClick={() => {
-          let filteredResList = topRestaurantList.filter(
-            (restaurant) => restaurant?.info?.avgRating > 4
-          );
-          setTopRestaurantList(filteredResList);
-        }}
-      >
-        Search
+      <div>
+        <button
+          className="find-top-restaurants"
+          onClick={() => {
+            let filteredResList = topRestaurantList.filter(
+              (restaurant) => restaurant?.info?.avgRating > 4
+            );
+            setTopRestaurantList(filteredResList);
+          }}
+        >
+          Find Top Restaurants
+        </button>
       </div>
       <div className="res-container">
         {topRestaurantList?.map((resCardData) => (

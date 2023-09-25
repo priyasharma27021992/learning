@@ -20,8 +20,13 @@ body{
 }
 
 .links div{
+    cursor: pointer;
     padding: 0 20px;
     font-size: 20px;
+}
+
+.links div:hover{
+    color: orange;
 }
 
 .image{
@@ -29,8 +34,12 @@ body{
     height: 100px;
 }
 
-.search{
+.find-top-restaurants{
     margin: 30px;
+    padding: 15px 52px;
+    border-radius: 5px;
+    border: solid 1px aliceblue;
+    cursor: pointer;
 }
 
 .res-container{
