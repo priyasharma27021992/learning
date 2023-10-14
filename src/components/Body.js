@@ -1,9 +1,25 @@
 import RestaurantCard from "./RestaurantCard";
-import { resData } from "../utils/mockData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { RES_URL } from "../utils/constants";
+import Shimmer from './Shimmer';
 
 export default Body = () => {
-  const [topRestaurantList, setTopRestaurantList] = useState(resData);
+  const [topRestaurantList, setTopRestaurantList] = useState([]);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, [])
+  
+  const fetchData = async () => {
+    const resData = await fetch(RES_URL);
+    const json = await resData.json();
+    const { restaurants = [] } = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle;
+    setListOfRestaurants(restaurants);
+  }
+  if (listOfRestaurants.length === 0)
+    return <Shimmer />
+
   return (
     <div className="body">
       <div>
@@ -20,7 +36,7 @@ export default Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {topRestaurantList?.map((resCardData) => (
+        {listOfRestaurants?.map((resCardData) => (
           <RestaurantCard resData={resCardData} />
         ))}
       </div>

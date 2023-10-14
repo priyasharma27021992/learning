@@ -1,59 +1,226 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-#heading{
-    color: aqua;
+button {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: beige;
+  cursor: pointer;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid gray;
-
+button:hover {
+  transform: scale(1.1);
 }
 
-.links{
-    display: flex;
-    align-items: center;
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
-.links div{
-    cursor: pointer;
-    padding: 0 20px;
-    font-size: 20px;
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.links div:hover{
-    color: orange;
+.justify-space-between {
+  justify-content: space-between;
 }
 
-.image{
-    width: 100px;
-    height: 100px;
+.no-style-link {
+  color: black;
+  text-decoration: none;
 }
 
-.find-top-restaurants{
-    margin: 30px;
-    padding: 15px 52px;
-    border-radius: 5px;
-    border: solid 1px aliceblue;
-    cursor: pointer;
+hr.separator {
+  width: 100%;
+  border: none;
+  border-top: 1px dashed #d3d3d3;
+  margin-bottom: 18px;
 }
 
-.res-container{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    margin: 20px;
+#heading {
+  color: aqua;
 }
 
-.res-card:hover{
-    transform: scale(0.95);
-    cursor: pointer;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
 }
 
-.search{
-    cursor: pointer;
+.header button {
+  width: 200px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links div {
+  cursor: pointer;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+.links div:hover {
+  color: orange;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.find-top-restaurants {
+  margin: 30px;
+  padding: 15px 52px;
+  border-radius: 5px;
+  border: solid 1px aliceblue;
+  cursor: pointer;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.res-card {
+  width: 19.5rem;
+}
+.res-card img {
+  height: 15rem;
+  width: 18rem;
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+.res-card:hover {
+  transform: scale(0.95);
+  cursor: pointer;
+}
+
+.res-card .card-name {
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.search {
+  cursor: pointer;
+}
+
+.shimmer-card {
+  background-color: gray;
+  width: 19.5rem;
+  height: 18rem;
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+/* restaurant menu */
+
+.res-menu-container {
+  max-width: 800px;
+  min-height: 800px;
+  margin: 20px auto 0;
+}
+
+.res-menu {
+  gap: 20px;
+  padding: 10px;
+}
+
+/* name card */
+.name-card {
+  justify-content: space-between;
+  color: #7e808c;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.dish-item {
+  margin: 3rem 0;
+}
+
+.dish-item .name {
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: #3e4152;
+  word-break: break-word;
+}
+
+.dish-item img {
+  width: 9rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Collapsible */
+.collapsible {
+  padding: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+.collapsible .content {
+  padding: 0 18px;
+  display: block;
+}
+
+.collapsible .hide {
+  display: none;
+}
+
+.collapsible button {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: none;
+  background: none;
+}
+
+.collapsible button:hover {
+  background-color: orange;
+  transform: none;
+}
+
+.collapsible .title {
+  font-size: 20px;
+}
+
+/* ItemCardShimmer */
+.item-card-shimmer{
+    width: 60%;
+    margin: 50px auto;
+}
+
+.item-card-shimmer .item-card-container{
+  gap: 10px;
+  padding: 15px;
+}
+
+.item-card-shimmer .name {
+  background-color: darkgrey;
+  width: 17rem;
+  height: 2rem;
+  margin: 5px 0;
+}
+
+.item-card-shimmer .img {
+  background-color: gray;
+  width: 13rem;
+  height: 10rem;
+  border-radius: 20px;
 }
